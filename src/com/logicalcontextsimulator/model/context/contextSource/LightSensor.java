@@ -33,11 +33,17 @@ public class LightSensor extends PhysicalContext{
     private JTextField tfValue1;
     
     //TODO Rechtsbuendig
+    
+    public LightSensor(int value1){
+    	this();
+    	tfValue1.setText(String.valueOf(value1));
+    }
+    
     public LightSensor(){
         super(Constants.LIGHTSENSOR);
         
         //Model
-        value1 = 50;
+        //value1 = 50;
         
         //GUI
         panel = new JPanel();
@@ -73,5 +79,13 @@ public class LightSensor extends PhysicalContext{
     public String getCommand(){
         return "lightsensor:"+value1;
     }
+
+	public int getValue1() {
+		return value1;
+	}
+
+	public void setValue1(int value1) {
+		this.value1 = value1;
+	}
     
 }

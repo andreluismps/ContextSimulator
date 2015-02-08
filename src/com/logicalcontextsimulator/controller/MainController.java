@@ -17,6 +17,7 @@ import com.logicalcontextsimulator.model.context.Situation;
 import com.logicalcontextsimulator.model.context.Scenario;
 import com.logicalcontextsimulator.model.context.contextSource.GPS;
 import com.logicalcontextsimulator.model.context.contextSource.RAM;
+import com.logicalcontextsimulator.util.CemantikaCASEXMLReader;
 import com.logicalcontextsimulator.util.Constants;
 import com.logicalcontextsimulator.util.SerializeHelperClass;
 import java.awt.BorderLayout;
@@ -95,6 +96,8 @@ public class MainController {
     
     private SerializeHelperClass serializeHelperClass;
     
+    private CemantikaCASEXMLReader cemantikaCASEXMLReader;
+    
  //   private PhysicalTabPanel physicalTabPanel;
  //   private LogicalTabPanel logicalTabPanel;
  //   private SituationTabPanel situationTabPanel;
@@ -104,6 +107,8 @@ public class MainController {
     public MainController(){
       //  scenario = new ScenarioOld();
         serializeHelperClass = new SerializeHelperClass();
+        
+        cemantikaCASEXMLReader = new CemantikaCASEXMLReader();
         
         mainTabPanel = new MainTabPanel();
         
@@ -319,16 +324,12 @@ public class MainController {
                 int answer = chooser.showOpenDialog(mainFrame);
                 
                 if(answer == JFileChooser.APPROVE_OPTION){
-                   serializeHelperClass = (SerializeHelperClass) loadStatusFromDisk(chooser.getSelectedFile().getAbsolutePath()); 
+                	
+                	cemantikaCASEXMLReader.loadDataFromDisk(chooser.getSelectedFile().getAbsolutePath()); 
   
                     //Load all Logical Context Sources
-                    lstLogicalContext = serializeHelperClass.getLstLogicalContext();   
+                    lstLogicalContext = cemantikaCASEXMLReader.getLstLogicalContext();   
 
-                    //Load all Situations  
-                    //lstSituation = serializeHelperClass.getLstSituation();
-
-                    //Load all Situation Groups  
-                    //lstScenario = serializeHelperClass.getLstScenario(); 
                 }
                 
                 situationController.setLstSituation(lstSituation);        
