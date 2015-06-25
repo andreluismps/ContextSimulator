@@ -4,21 +4,21 @@
  */
 package com.logicalcontextsimulator.gui.panel.contextList;
 
-import com.logicalcontextsimulator.model.context.AbstractContext;
-import com.logicalcontextsimulator.model.context.Scenario;
-import com.logicalcontextsimulator.model.context.TimeSlot;
-import com.logicalcontextsimulator.util.Constants;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Font;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionAdapter;
-import java.awt.event.MouseMotionListener;
-import javax.swing.*;
+
+import javax.swing.JLabel;
+import javax.swing.JTable;
 import javax.swing.border.MatteBorder;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableCellRenderer;
+
+import com.logicalcontextsimulator.model.context.AbstractContext;
+import com.logicalcontextsimulator.model.context.Scenario;
+import com.logicalcontextsimulator.util.Constants;
 /**
  *
  * @author MHL

@@ -4,12 +4,13 @@
  */
 package com.logicalcontextsimulator.model.context;
 
-import com.logicalcontextsimulator.util.Constants;
 import java.awt.Color;
 import java.awt.GridLayout;
-import javax.swing.ImageIcon;
+
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
+import com.logicalcontextsimulator.util.Constants;
 
 /**
  *

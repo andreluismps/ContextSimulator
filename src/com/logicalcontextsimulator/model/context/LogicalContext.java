@@ -4,9 +4,9 @@
  */
 package com.logicalcontextsimulator.model.context;
 
-import com.logicalcontextsimulator.util.Constants;
 import java.awt.Color;
-import javax.swing.ImageIcon;
+
+import com.logicalcontextsimulator.util.Constants;
 
 /**
  *

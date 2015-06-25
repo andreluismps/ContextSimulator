@@ -4,13 +4,14 @@
  */
 package com.logicalcontextsimulator.gui.panel;
 
-import com.logicalcontextsimulator.util.Constants;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
 import javax.swing.border.TitledBorder;
+
+import com.logicalcontextsimulator.util.Constants;
 
 /**
  *

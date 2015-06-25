@@ -4,11 +4,13 @@
  */
 package com.logicalcontextsimulator.model.renderer;
 
-import com.logicalcontextsimulator.model.context.AbstractContext;
 import java.awt.Component;
+
 import javax.swing.JTree;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeCellRenderer;
+
+import com.logicalcontextsimulator.model.context.AbstractContext;
 
 /**
  * Class provides different Icons for the Tree for different context types.

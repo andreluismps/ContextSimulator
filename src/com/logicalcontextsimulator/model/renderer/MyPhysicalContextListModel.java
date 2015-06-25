@@ -4,8 +4,9 @@
  */
 package com.logicalcontextsimulator.model.renderer;
 
-import com.logicalcontextsimulator.util.Constants;
 import javax.swing.AbstractListModel;
+
+import com.logicalcontextsimulator.util.Constants;
 
 /**
  *

@@ -4,16 +4,15 @@
  */
 package com.logicalcontextsimulator.gui.panel.cardPanels;
 
-import com.logicalcontextsimulator.gui.panel.contextList.ListPanelLogicalContext;
-import com.logicalcontextsimulator.gui.panel.contextList.ListPanelSituation;
-import com.logicalcontextsimulator.model.context.AbstractContext;
-import com.logicalcontextsimulator.util.Constants;
 import java.awt.CardLayout;
+
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
 import javax.swing.border.TitledBorder;
+
+import com.logicalcontextsimulator.util.Constants;
 
 /**
  *

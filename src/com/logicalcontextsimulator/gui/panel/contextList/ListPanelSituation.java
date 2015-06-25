@@ -4,10 +4,11 @@
  */
 package com.logicalcontextsimulator.gui.panel.contextList;
 
-import com.logicalcontextsimulator.model.renderer.MyListCellRenderer;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JList;
 import javax.swing.JScrollPane;
+
+import com.logicalcontextsimulator.model.renderer.MyListCellRenderer;
 
 /**
  *

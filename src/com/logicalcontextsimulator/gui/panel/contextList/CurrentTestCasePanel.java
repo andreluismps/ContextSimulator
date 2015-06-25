@@ -4,10 +4,11 @@
  */
 package com.logicalcontextsimulator.gui.panel.contextList;
 
-import com.logicalcontextsimulator.model.renderer.MyListCellRenderer;
 import javax.swing.BorderFactory;
 import javax.swing.border.Border;
 import javax.swing.border.TitledBorder;
+
+import com.logicalcontextsimulator.model.renderer.MyListCellRenderer;
 
 /**
  *

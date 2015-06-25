@@ -4,13 +4,15 @@
  */
 package com.logicalcontextsimulator.model.context.contextSource;
 
-import com.logicalcontextsimulator.model.context.PhysicalContext;
-import com.logicalcontextsimulator.util.Constants;
 import java.awt.GridLayout;
+
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+
+import com.logicalcontextsimulator.model.context.PhysicalContext;
+import com.logicalcontextsimulator.util.Constants;
 
 /**
  *

@@ -4,8 +4,17 @@
  */
 package com.logicalcontextsimulator.controller;
 
+import java.awt.BorderLayout;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+
+import javax.swing.JComponent;
+import javax.swing.JList;
+import javax.swing.JPanel;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+
 import com.logicalcontextsimulator.gui.panel.SimulatorTabPanel;
-import com.logicalcontextsimulator.gui.panel.contextList.ContextTreePanel;
 import com.logicalcontextsimulator.gui.panel.contextList.ListPanelPhysicalContext;
 import com.logicalcontextsimulator.model.context.AbstractContext;
 import com.logicalcontextsimulator.model.context.PhysicalContext;
@@ -37,14 +46,6 @@ import com.logicalcontextsimulator.model.context.contextSource.WiFi;
 import com.logicalcontextsimulator.model.renderer.ContextListItem;
 import com.logicalcontextsimulator.model.renderer.MyPhysicalContextListModel;
 import com.logicalcontextsimulator.util.Constants;
-import java.awt.BorderLayout;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
-import javax.swing.JComponent;
-import javax.swing.JList;
-import javax.swing.JPanel;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
 
 /**
  *

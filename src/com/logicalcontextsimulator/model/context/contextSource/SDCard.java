@@ -4,12 +4,14 @@
  */
 package com.logicalcontextsimulator.model.context.contextSource;
 
-import com.logicalcontextsimulator.model.context.PhysicalContext;
-import com.logicalcontextsimulator.util.Constants;
 import java.awt.GridLayout;
+
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
+import com.logicalcontextsimulator.model.context.PhysicalContext;
+import com.logicalcontextsimulator.util.Constants;
 
 /**
  *

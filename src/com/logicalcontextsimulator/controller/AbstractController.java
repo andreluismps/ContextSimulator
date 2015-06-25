@@ -4,6 +4,20 @@
  */
 package com.logicalcontextsimulator.controller;
 
+import java.awt.BorderLayout;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JComponent;
+import javax.swing.JList;
+import javax.swing.JTree;
+import javax.swing.border.TitledBorder;
+import javax.swing.event.TreeSelectionEvent;
+import javax.swing.event.TreeSelectionListener;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
+
 import com.logicalcontextsimulator.gui.panel.SimulatorTabPanel;
 import com.logicalcontextsimulator.gui.panel.cardPanels.ContextChoicePanel;
 import com.logicalcontextsimulator.gui.panel.contextList.ContextTreePanel;
@@ -12,7 +26,6 @@ import com.logicalcontextsimulator.model.context.LogicalContext;
 import com.logicalcontextsimulator.model.context.PhysicalContext;
 import com.logicalcontextsimulator.model.context.Scenario;
 import com.logicalcontextsimulator.model.context.Situation;
-import com.logicalcontextsimulator.model.context.TimeSlot;
 import com.logicalcontextsimulator.model.context.contextSource.Accelerometer;
 import com.logicalcontextsimulator.model.context.contextSource.Barometer;
 import com.logicalcontextsimulator.model.context.contextSource.Battery;
@@ -40,18 +53,6 @@ import com.logicalcontextsimulator.model.context.contextSource.USBCable;
 import com.logicalcontextsimulator.model.context.contextSource.WiFi;
 import com.logicalcontextsimulator.model.renderer.MyTreeRenderer;
 import com.logicalcontextsimulator.util.Constants;
-import java.awt.BorderLayout;
-import java.util.ArrayList;
-import java.util.List;
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.JComponent;
-import javax.swing.JList;
-import javax.swing.JTree;
-import javax.swing.border.TitledBorder;
-import javax.swing.event.TreeSelectionEvent;
-import javax.swing.event.TreeSelectionListener;
-import javax.swing.tree.DefaultMutableTreeNode;
-import javax.swing.tree.DefaultTreeModel;
 
 /**
  *

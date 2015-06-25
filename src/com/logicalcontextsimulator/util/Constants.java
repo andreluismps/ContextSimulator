@@ -4,11 +4,12 @@
  */
 package com.logicalcontextsimulator.util;
 
-import com.logicalcontextsimulator.controller.MainController;
-import com.logicalcontextsimulator.model.context.Situation;
 import java.awt.Color;
 import java.net.URL;
+
 import javax.swing.ImageIcon;
+
+import com.logicalcontextsimulator.model.context.Situation;
 
 /**
  *

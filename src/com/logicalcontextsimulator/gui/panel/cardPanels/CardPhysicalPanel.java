@@ -4,10 +4,8 @@
  */
 package com.logicalcontextsimulator.gui.panel.cardPanels;
 
-import com.logicalcontextsimulator.model.renderer.MyListCellRenderer;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
-import javax.swing.JList;
 import javax.swing.JPanel;
 
 /**

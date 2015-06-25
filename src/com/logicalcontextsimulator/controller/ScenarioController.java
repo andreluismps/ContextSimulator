@@ -4,23 +4,21 @@
  */
 package com.logicalcontextsimulator.controller;
 
-import com.logicalcontextsimulator.gui.panel.SimulatorTabPanel;
-import com.logicalcontextsimulator.gui.panel.contextList.ContextTreePanel;
-import com.logicalcontextsimulator.gui.panel.contextList.ListPanelScenario;
-import com.logicalcontextsimulator.model.context.AbstractContext;
-import com.logicalcontextsimulator.model.context.PhysicalContext;
-import com.logicalcontextsimulator.model.context.Scenario;
-import com.logicalcontextsimulator.util.Constants;
 import java.awt.BorderLayout;
 import java.util.List;
+
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComponent;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
-import javax.swing.event.TreeSelectionEvent;
-import javax.swing.event.TreeSelectionListener;
+
+import com.logicalcontextsimulator.gui.panel.SimulatorTabPanel;
+import com.logicalcontextsimulator.gui.panel.contextList.ListPanelScenario;
+import com.logicalcontextsimulator.model.context.AbstractContext;
+import com.logicalcontextsimulator.model.context.Scenario;
+import com.logicalcontextsimulator.util.Constants;
 
 /**
  *

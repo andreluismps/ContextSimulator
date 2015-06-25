@@ -4,13 +4,14 @@
  */
 package com.logicalcontextsimulator.controller;
 
+import java.awt.BorderLayout;
+
+import javax.swing.JList;
+
 import com.logicalcontextsimulator.gui.panel.TestCaseTabPanel;
 import com.logicalcontextsimulator.gui.panel.contextList.CurrentTestCasePanel;
 import com.logicalcontextsimulator.gui.panel.contextList.ListPanelPhysicalContext;
 import com.logicalcontextsimulator.model.renderer.MyPhysicalContextListModel;
-import java.awt.BorderLayout;
-import javax.swing.JLabel;
-import javax.swing.JList;
 
 /**
  *

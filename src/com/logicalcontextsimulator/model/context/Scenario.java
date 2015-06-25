@@ -4,9 +4,9 @@
  */
 package com.logicalcontextsimulator.model.context;
 
-import com.logicalcontextsimulator.gui.panel.contextList.TimeLinePanel;
-import com.logicalcontextsimulator.util.Constants;
 import java.awt.Color;
+
+import com.logicalcontextsimulator.util.Constants;
 
 /**
  *

@@ -4,6 +4,16 @@
  */
 package com.logicalcontextsimulator.controller;
 
+import java.awt.BorderLayout;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.util.List;
+
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.JTextArea;
+import javax.swing.table.AbstractTableModel;
+
 import com.logicalcontextsimulator.connection.TransmitData;
 import com.logicalcontextsimulator.gui.panel.TransmissionTabPanel;
 import com.logicalcontextsimulator.gui.panel.contextList.TimeLinePanel;
@@ -13,14 +23,6 @@ import com.logicalcontextsimulator.model.context.PhysicalContext;
 import com.logicalcontextsimulator.model.context.Scenario;
 import com.logicalcontextsimulator.model.context.TimeSlot;
 import com.logicalcontextsimulator.util.Constants;
-import java.awt.BorderLayout;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.util.List;
-import javax.swing.JOptionPane;
-import javax.swing.JTable;
-import javax.swing.JTextArea;
-import javax.swing.table.AbstractTableModel;
 
 /**
  *

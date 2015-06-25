@@ -4,11 +4,12 @@
  */
 package com.logicalcontextsimulator.connection;
 
+import java.util.List;
+
 import com.logicalcontextsimulator.connection.interfaces.TelnetConnectable;
 import com.logicalcontextsimulator.connection.telnet.TelnetServer;
 import com.logicalcontextsimulator.model.context.PhysicalContext;
 import com.logicalcontextsimulator.util.Constants;
-import java.util.List;
 
 /**
  *

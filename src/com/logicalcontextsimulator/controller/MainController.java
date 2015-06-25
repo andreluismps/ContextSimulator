@@ -5,21 +5,7 @@
 package com.logicalcontextsimulator.controller;
 
 import static com.logicalcontextsimulator.controller.AbstractController.currentContextInTree;
-import com.logicalcontextsimulator.gui.MainFrame;
-import com.logicalcontextsimulator.gui.panel.MainTabPanel;
-import com.logicalcontextsimulator.gui.panel.SimulatorTabPanel;
-import com.logicalcontextsimulator.gui.panel.TestCaseTabPanel;
-import com.logicalcontextsimulator.gui.panel.TransmissionTabPanel;
-import com.logicalcontextsimulator.model.context.AbstractContext;
-import com.logicalcontextsimulator.model.context.LogicalContext;
-import com.logicalcontextsimulator.model.context.PhysicalContext;
-import com.logicalcontextsimulator.model.context.Situation;
-import com.logicalcontextsimulator.model.context.Scenario;
-import com.logicalcontextsimulator.model.context.contextSource.GPS;
-import com.logicalcontextsimulator.model.context.contextSource.RAM;
-import com.logicalcontextsimulator.util.CemantikaCASEXMLReader;
-import com.logicalcontextsimulator.util.Constants;
-import com.logicalcontextsimulator.util.SerializeHelperClass;
+
 import java.awt.BorderLayout;
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -32,9 +18,26 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.table.AbstractTableModel;
+
+import com.logicalcontextsimulator.cemantika.util.CemantikaCASEXMLReader;
+import com.logicalcontextsimulator.gui.MainFrame;
+import com.logicalcontextsimulator.gui.panel.MainTabPanel;
+import com.logicalcontextsimulator.gui.panel.SimulatorTabPanel;
+import com.logicalcontextsimulator.gui.panel.TestCaseTabPanel;
+import com.logicalcontextsimulator.gui.panel.TransmissionTabPanel;
+import com.logicalcontextsimulator.model.context.AbstractContext;
+import com.logicalcontextsimulator.model.context.LogicalContext;
+import com.logicalcontextsimulator.model.context.PhysicalContext;
+import com.logicalcontextsimulator.model.context.Scenario;
+import com.logicalcontextsimulator.model.context.Situation;
+import com.logicalcontextsimulator.model.context.contextSource.GPS;
+import com.logicalcontextsimulator.model.context.contextSource.RAM;
+import com.logicalcontextsimulator.util.Constants;
+import com.logicalcontextsimulator.util.SerializeHelperClass;
 
 /**
  *

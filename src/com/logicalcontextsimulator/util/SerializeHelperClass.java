@@ -4,9 +4,10 @@
  */
 package com.logicalcontextsimulator.util;
 
-import com.logicalcontextsimulator.model.context.AbstractContext;
 import java.io.Serializable;
 import java.util.List;
+
+import com.logicalcontextsimulator.model.context.AbstractContext;
 
 /**
  *

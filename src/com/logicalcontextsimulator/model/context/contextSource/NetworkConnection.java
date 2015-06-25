@@ -4,13 +4,15 @@
  */
 package com.logicalcontextsimulator.model.context.contextSource;
 
-import com.logicalcontextsimulator.connection.interfaces.TelnetConnectable;
-import com.logicalcontextsimulator.model.context.PhysicalContext;
-import com.logicalcontextsimulator.util.Constants;
 import java.awt.GridLayout;
+
 import javax.swing.ButtonGroup;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
+
+import com.logicalcontextsimulator.connection.interfaces.TelnetConnectable;
+import com.logicalcontextsimulator.model.context.PhysicalContext;
+import com.logicalcontextsimulator.util.Constants;
 
 /**
  *

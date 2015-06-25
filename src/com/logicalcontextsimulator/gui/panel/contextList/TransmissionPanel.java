@@ -4,10 +4,10 @@
  */
 package com.logicalcontextsimulator.gui.panel.contextList;
 
-import com.logicalcontextsimulator.util.Constants;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+
+import com.logicalcontextsimulator.util.Constants;
 
 /**
  *

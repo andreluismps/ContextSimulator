@@ -4,10 +4,7 @@
  */
 package com.logicalcontextsimulator.gui.panel;
 
-import javax.swing.BorderFactory;
 import javax.swing.JPanel;
-import javax.swing.border.Border;
-import javax.swing.border.TitledBorder;
 
 /**
  *

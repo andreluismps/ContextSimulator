@@ -4,25 +4,23 @@
  */
 package com.logicalcontextsimulator.controller;
 
-import com.logicalcontextsimulator.gui.panel.cardPanels.CardPhysicalPanel;
-import com.logicalcontextsimulator.gui.panel.cardPanels.ContextChoicePanel;
-import com.logicalcontextsimulator.gui.panel.contextList.ListPanelLogicalContext;
-import com.logicalcontextsimulator.gui.panel.contextList.ListPanelPhysicalContext;
-import com.logicalcontextsimulator.gui.panel.contextList.ListPanelScenario;
-import com.logicalcontextsimulator.model.context.AbstractContext;
-import com.logicalcontextsimulator.model.context.LogicalContext;
-import com.logicalcontextsimulator.model.context.Scenario;
-import com.logicalcontextsimulator.model.context.Situation;
-import com.logicalcontextsimulator.model.renderer.ContextListItem;
 import java.awt.BorderLayout;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JList;
 import javax.swing.border.TitledBorder;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+
+import com.logicalcontextsimulator.gui.panel.cardPanels.CardPhysicalPanel;
+import com.logicalcontextsimulator.gui.panel.cardPanels.ContextChoicePanel;
+import com.logicalcontextsimulator.model.context.AbstractContext;
+import com.logicalcontextsimulator.model.context.LogicalContext;
+import com.logicalcontextsimulator.model.context.Scenario;
+import com.logicalcontextsimulator.model.context.Situation;
 
 /**
  *

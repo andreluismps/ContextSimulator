@@ -4,9 +4,10 @@
  */
 package com.logicalcontextsimulator.gui;
 
-import com.logicalcontextsimulator.util.Constants;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
+
+import com.logicalcontextsimulator.util.Constants;
 
 /**
  *

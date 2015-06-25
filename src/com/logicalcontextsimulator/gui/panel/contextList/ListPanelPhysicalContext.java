@@ -4,12 +4,9 @@
  */
 package com.logicalcontextsimulator.gui.panel.contextList;
 
-import com.logicalcontextsimulator.model.renderer.ContextListItem;
-import com.logicalcontextsimulator.model.renderer.MyListIconCellRenderer;
-import com.logicalcontextsimulator.model.renderer.MyPhysicalContextListModel;
-import com.logicalcontextsimulator.util.Constants;
-import javax.swing.DefaultComboBoxModel;
 import javax.swing.JList;
+
+import com.logicalcontextsimulator.model.renderer.MyPhysicalContextListModel;
 
 /**
  *
