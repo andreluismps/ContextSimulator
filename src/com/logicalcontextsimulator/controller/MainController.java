@@ -331,7 +331,9 @@ public class MainController {
                 	cemantikaCASEXMLReader.loadDataFromDisk(chooser.getSelectedFile().getAbsolutePath()); 
   
                     //Load all Logical Context Sources
-                    lstLogicalContext = cemantikaCASEXMLReader.getLstLogicalContext();   
+                    lstLogicalContext = cemantikaCASEXMLReader.getLstLogicalContext();
+                    lstSituation = cemantikaCASEXMLReader.getLstSituation();
+                    lstScenario = cemantikaCASEXMLReader.getLstScenario();
 
                 }
                 

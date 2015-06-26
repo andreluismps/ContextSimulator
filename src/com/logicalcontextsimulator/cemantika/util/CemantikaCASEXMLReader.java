@@ -29,6 +29,8 @@ import com.logicalcontextsimulator.model.context.contextSource.LightSensor;
  */
 public class CemantikaCASEXMLReader {
     private List<AbstractContext> lstLogicalContext;
+    private List<AbstractContext> lstSituation;
+    private List<AbstractContext> lstScenario;
 
 	public List<AbstractContext> getLstLogicalContext() {
 		return lstLogicalContext;
@@ -36,6 +38,22 @@ public class CemantikaCASEXMLReader {
 
 	public void setLstLogicalContext(List<AbstractContext> lstLogicalContext) {
 		this.lstLogicalContext = lstLogicalContext;
+	}
+
+	public List<AbstractContext> getLstSituation() {
+		return lstSituation;
+	}
+
+	public void setLstSituation(List<AbstractContext> lstSituation) {
+		this.lstSituation = lstSituation;
+	}
+
+	public List<AbstractContext> getLstScenario() {
+		return lstScenario;
+	}
+
+	public void setLstScenario(List<AbstractContext> lstScenario) {
+		this.lstScenario = lstScenario;
 	}
 
 	public void loadDataFromDisk(String absolutePath) {
@@ -60,28 +78,41 @@ public class CemantikaCASEXMLReader {
 			e.printStackTrace();
 		}
         AbstractContext scenario = new Scenario(cemantikaScenario.getName());
-        List<AbstractContext> lstSituation = new ArrayList<AbstractContext>();
-        //AbstractContext situation = new Situation(null);
+        lstScenario = new ArrayList<AbstractContext>();
+        lstSituation = new ArrayList<AbstractContext>();
+        lstLogicalContext = new ArrayList<AbstractContext>();
         
         
-        
+        int timeSlot = 0;
         for (com.logicalcontextsimulator.cemantika.model.Situation cemantikaSituation : cemantikaScenario.getSituations()) {
         	AbstractContext situation = new Situation(cemantikaSituation.getName());
-        	List<AbstractContext> lstLogicalContext = new ArrayList<AbstractContext>();
+        	List<AbstractContext>logicalContexts = new ArrayList<AbstractContext>();
         	for (com.logicalcontextsimulator.cemantika.model.LogicalContext cemantikaLogicalContext : cemantikaSituation.getLogicalContexts()) {
         		AbstractContext logical = new LogicalContext(cemantikaLogicalContext.getName());
         		List<AbstractContext> lstPhysicalContext = new ArrayList<AbstractContext>();
         		for (String sensor : cemantikaLogicalContext.getSensors()) {
-        			PhysicalContext physicalContext = new LightSensor();
-        			lstPhysicalContext.add(physicalContext);
+        			try {
+						Class<?> c = Class.forName("com.logicalcontextsimulator.model.context.contextSource."+ sensor);
+						PhysicalContext physicalContext = (PhysicalContext) c.newInstance();
+	        			lstPhysicalContext.add(physicalContext);
+					} catch (ClassNotFoundException e) {
+						e.printStackTrace();
+					} catch (InstantiationException e) {
+						e.printStackTrace();
+					} catch (IllegalAccessException e) {
+						e.printStackTrace();
+					}
 				}
         		logical.setContextList(lstPhysicalContext);
         		lstLogicalContext.add(logical);
+        		logicalContexts.add(logical);
 			}
-        	situation.setContextList(lstLogicalContext);
+        	situation.setContextList(logicalContexts);
         	lstSituation.add(situation);
+        	scenario.addChildContext(situation, timeSlot++);
 		}
-        scenario.setContextList(lstSituation);
+       // scenario.setContextList(lstSituation);
+        lstScenario.add(scenario);
         
 //        lstLogicalContext = new ArrayList<AbstractContext>();
 //        int i = 0;

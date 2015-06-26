@@ -88,6 +88,8 @@ public class Constants {
     public final static String URL_ICON_OPEN = "icons/open.png";
     
     public final static String URL_ICON_SAVE = "icons/save.png";
+    
+    public final static String URL_ICON_IMPORT = "icons/import.png";
    
     public final static String URL_ICON_SETTINGS = "icons/settings.png";
     

@@ -27,6 +27,7 @@ public class MainFrame extends javax.swing.JFrame {
         
         jMenuItemLoad.setIcon(Constants.getInstance().getImageIcon(Constants.URL_ICON_OPEN));
         jMenuItemSave.setIcon(Constants.getInstance().getImageIcon(Constants.URL_ICON_SAVE));
+        jMenuItemImport.setIcon(Constants.getInstance().getImageIcon(Constants.URL_ICON_IMPORT));
         jMenuItemSettings.setIcon(Constants.getInstance().getImageIcon(Constants.URL_ICON_SETTINGS));
         
         setTitle("Context Simulator");
