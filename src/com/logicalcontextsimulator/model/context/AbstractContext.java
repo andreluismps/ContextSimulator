@@ -11,6 +11,8 @@ import java.util.List;
 
 import javax.swing.ImageIcon;
 
+import com.logicalcontextsimulator.util.HashCodeUtil;
+
 /**
  *
  * @author MHL
@@ -77,4 +79,25 @@ public abstract class AbstractContext implements Serializable, Cloneable{
     }
   }
 
+	@Override
+	public int hashCode() {
+		int result = HashCodeUtil.SEED;
+		result = HashCodeUtil.hash(result, name);
+		result = HashCodeUtil.hash(result, lstContext);
+		return super.hashCode();
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (!(obj instanceof AbstractContext))
+            return false;
+        if (obj == this)
+            return true;
+
+        AbstractContext rhs = (AbstractContext) obj;
+        return name.equals(rhs.name) && lstContext.equals(rhs.lstContext);
+	}
+
+  
+  
 }

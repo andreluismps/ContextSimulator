@@ -104,7 +104,11 @@ public class CemantikaCASEXMLReader {
 					}
 				}
         		logical.setContextList(lstPhysicalContext);
-        		lstLogicalContext.add(logical);
+        		if (!lstLogicalContext.contains(logical)){
+        			lstLogicalContext.add(logical);
+        		}else{
+        			logical = lstLogicalContext.get(lstLogicalContext.indexOf(logical));
+        		}
         		logicalContexts.add(logical);
 			}
         	situation.setContextList(logicalContexts);
