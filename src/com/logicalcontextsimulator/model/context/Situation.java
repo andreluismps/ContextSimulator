@@ -5,6 +5,8 @@
 package com.logicalcontextsimulator.model.context;
 
 import java.awt.Color;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.logicalcontextsimulator.util.Constants;
 
@@ -18,8 +20,11 @@ public class Situation extends AbstractContext{
 	 * 
 	 */
 	private static final long serialVersionUID = 6275195839246421095L;
+	
+	private List<String> expectedActions = new ArrayList<String>();
 
 	public Situation(String name){
+		super();
       setName(name);    
       
       leafIcon = Constants.getInstance().getImageIcon(Constants.URL_ICON_SITUATION);
@@ -41,6 +46,13 @@ public class Situation extends AbstractContext{
           getContextList().add(context);  
         }
     }
+    
+	public void setExpectedActions(List<String> expectedActions) {
+		this.expectedActions = expectedActions;
+	}
 
+	public List<String> getExpectedActions() {
+		return expectedActions;
+	}
 
 }

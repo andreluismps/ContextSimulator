@@ -29,9 +29,9 @@ public class Barometer extends PhysicalContext{
     private int value1;
     
     //GUI
-    private JPanel panel;
-    private JLabel jLabel1;
-    private JTextField tfValue1;
+    private transient JPanel panel;
+    private transient JLabel jLabel1;
+    private transient JTextField tfValue1;
     
     //TODO Rechtsbuendig
     public Barometer(){

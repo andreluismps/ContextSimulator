@@ -28,11 +28,11 @@ public class TimeDate extends PhysicalContext{
     private String time, date;
     
     //GUI
-    private JPanel panel;
-    private JLabel jLabel1;
-    private JTextField tfTime;
-    private JLabel jLabel2;
-    private JTextField tfDate;
+    private transient JPanel panel;
+    private transient JLabel jLabel1;
+    private transient JTextField tfTime;
+    private transient JLabel jLabel2;
+    private transient JTextField tfDate;
     
     public TimeDate(){
         super(Constants.TIMEDATE);

@@ -32,11 +32,11 @@ public class TimeSlot extends AbstractContext{
     }
 
     public List<PhysicalContext> getTransmissionInSpot(){
-        mapPhysicalContext = new HashMap<>();
+        mapPhysicalContext = new HashMap<String, PhysicalContext>();
         
         findAllPhysicalContextRekursiv(getContextList());
         
-        List list = new ArrayList<>(mapPhysicalContext.values());
+        List<PhysicalContext> list = new ArrayList<PhysicalContext>(mapPhysicalContext.values());
 
         return list;
     }

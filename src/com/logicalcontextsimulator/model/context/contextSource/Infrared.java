@@ -28,9 +28,9 @@ public class Infrared extends PhysicalContext{
     boolean value1 = false;
     
     //GUI
-    private JPanel panel;
-    private JLabel jLabel1;
-    private JCheckBox cbValue1;
+    private transient JPanel panel;
+    private transient JLabel jLabel1;
+    private transient JCheckBox cbValue1;
     
     //TODO Rechtsbuendig
     public Infrared(){

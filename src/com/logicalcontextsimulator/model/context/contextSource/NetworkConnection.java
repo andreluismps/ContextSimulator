@@ -33,14 +33,14 @@ public class NetworkConnection extends PhysicalContext  implements TelnetConnect
     private boolean value6 = false;
     
     //GUI
-    private JPanel panel;
-    private ButtonGroup btGroup;
-    private JRadioButton rbValue1;
-    private JRadioButton rbValue2;
-    private JRadioButton rbValue3;
-    private JRadioButton rbValue4;
-    private JRadioButton rbValue5;
-    private JRadioButton rbValue6;   
+    private transient JPanel panel;
+    private transient ButtonGroup btGroup;
+    private transient JRadioButton rbValue1;
+    private transient JRadioButton rbValue2;
+    private transient JRadioButton rbValue3;
+    private transient JRadioButton rbValue4;
+    private transient JRadioButton rbValue5;
+    private transient JRadioButton rbValue6;   
   
     
     /*

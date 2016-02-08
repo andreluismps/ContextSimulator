@@ -24,6 +24,8 @@ public class PhysicalContext extends AbstractContext{
 	 */
 	private static final long serialVersionUID = -437658113632518586L;
 
+	public PhysicalContext(){}
+	
 	public PhysicalContext(String name){
       setName(name);    
       

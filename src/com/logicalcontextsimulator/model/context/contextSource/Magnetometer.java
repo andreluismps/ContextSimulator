@@ -29,13 +29,13 @@ public class Magnetometer extends PhysicalContext{
     private double value3;
     
     //GUI
-    private JPanel panel;
-    private JLabel jLabel1;
-    private JTextField tf1;
-    private JLabel jLabel2;
-    private JTextField tf2;
-    private JLabel jLabel3;
-    private JTextField tf3;
+    private transient JPanel panel;
+    private transient JLabel jLabel1;
+    private transient JTextField tf1;
+    private transient JLabel jLabel2;
+    private transient JTextField tf2;
+    private transient JLabel jLabel3;
+    private transient JTextField tf3;
     
     public Magnetometer(){
         super(Constants.MAGNETOMETER);

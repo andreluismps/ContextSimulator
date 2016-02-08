@@ -23,7 +23,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.table.AbstractTableModel;
 
-import com.logicalcontextsimulator.cemantika.util.CemantikaCASEXMLReader;
+import com.logicalcontextsimulator.cemantika.util.CemantikaCASEJsonReader;
 import com.logicalcontextsimulator.gui.MainFrame;
 import com.logicalcontextsimulator.gui.panel.MainTabPanel;
 import com.logicalcontextsimulator.gui.panel.SimulatorTabPanel;
@@ -99,7 +99,7 @@ public class MainController {
     
     private SerializeHelperClass serializeHelperClass;
     
-    private CemantikaCASEXMLReader cemantikaCASEXMLReader;
+    private CemantikaCASEJsonReader cemantikaCASEJsonReader;
     
  //   private PhysicalTabPanel physicalTabPanel;
  //   private LogicalTabPanel logicalTabPanel;
@@ -111,7 +111,7 @@ public class MainController {
       //  scenario = new ScenarioOld();
         serializeHelperClass = new SerializeHelperClass();
         
-        cemantikaCASEXMLReader = new CemantikaCASEXMLReader();
+        cemantikaCASEJsonReader = new CemantikaCASEJsonReader();
         
         mainTabPanel = new MainTabPanel();
         
@@ -328,12 +328,12 @@ public class MainController {
                 
                 if(answer == JFileChooser.APPROVE_OPTION){
                 	
-                	cemantikaCASEXMLReader.loadDataFromDisk(chooser.getSelectedFile().getAbsolutePath()); 
+                	cemantikaCASEJsonReader.loadDataFromDisk(chooser.getSelectedFile().getAbsolutePath()); 
   
                     //Load all Logical Context Sources
-                    lstLogicalContext = cemantikaCASEXMLReader.getLstLogicalContext();
-                    lstSituation = cemantikaCASEXMLReader.getLstSituation();
-                    lstScenario = cemantikaCASEXMLReader.getLstScenario();
+                    //lstLogicalContext = cemantikaCASEJsonReader.getLstLogicalContext();
+                    //lstSituation = cemantikaCASEJsonReader.getLstSituation();
+                    lstScenario = cemantikaCASEJsonReader.getLstScenario();
 
                 }
                 
