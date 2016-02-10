@@ -10,14 +10,15 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.TreeSet;
 
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.TypeAdapter;
 import com.google.gson.reflect.TypeToken;
 import com.logicalcontextsimulator.model.context.AbstractContext;
-import com.logicalcontextsimulator.model.context.Scenario;
+import com.logicalcontextsimulator.model.context.LogicalContext;
+import com.logicalcontextsimulator.model.context.Situation;
 import com.logicalcontextsimulator.model.context.TestSuite;
 import com.logicalcontextsimulator.util.GsonUtils;
 
@@ -74,9 +75,33 @@ public class CemantikaCASEJsonReader {
 		
 		lstScenario = testSuite.getTestCases();
 		
-		//TODO fill these lists
-		lstSituation = new ArrayList<AbstractContext>();
-        lstLogicalContext = new ArrayList<AbstractContext>();		
+		List<AbstractContext> lstSituationAux = new ArrayList<AbstractContext>();
+		List<AbstractContext> lstLogicalContextAux = new ArrayList<AbstractContext>();
 		
+		for (AbstractContext scenario : testSuite.getTestCases())
+			populate(scenario, lstSituationAux, lstLogicalContextAux);
+		
+		lstSituation = new ArrayList<AbstractContext>();
+		lstLogicalContext = new ArrayList<AbstractContext>();
+		
+		lstSituation.addAll(new TreeSet<AbstractContext>(lstSituationAux));
+		lstLogicalContext.addAll(new TreeSet<AbstractContext>(lstLogicalContextAux));
+        
 	}
+	
+	private void populate(AbstractContext context, List<AbstractContext> lstSituationAux, List<AbstractContext> lstLogicalContextAux){
+		
+		if (context.getContextList() == null)
+			return;
+
+		if (context instanceof Situation)
+			lstSituationAux.add(context);
+		else if (context instanceof LogicalContext)
+			lstLogicalContextAux.add(context);
+
+		for (AbstractContext contextAux : context.getContextList())
+			populate(contextAux, lstSituationAux, lstLogicalContextAux);
+
+	}
+	
 }

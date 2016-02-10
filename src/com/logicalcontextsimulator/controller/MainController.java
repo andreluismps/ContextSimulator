@@ -331,8 +331,8 @@ public class MainController {
                 	cemantikaCASEJsonReader.loadDataFromDisk(chooser.getSelectedFile().getAbsolutePath()); 
   
                     //Load all Logical Context Sources
-                    //lstLogicalContext = cemantikaCASEJsonReader.getLstLogicalContext();
-                    //lstSituation = cemantikaCASEJsonReader.getLstSituation();
+                    lstLogicalContext = cemantikaCASEJsonReader.getLstLogicalContext();
+                    lstSituation = cemantikaCASEJsonReader.getLstSituation();
                     lstScenario = cemantikaCASEJsonReader.getLstScenario();
 
                 }
