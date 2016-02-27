@@ -27,7 +27,7 @@ public class GPS extends PhysicalContext implements TelnetConnectable{
 	private static final long serialVersionUID = -2796409290683390549L;
 
 	//Model
-    private double latitude, longitude, altitude, accuracy;
+    private double latitude, longitude, altitude;
     
     //GUI
     private transient JPanel panel;
@@ -37,8 +37,6 @@ public class GPS extends PhysicalContext implements TelnetConnectable{
     private transient JTextField tfLongitude;
     private transient JLabel jLabel3;
     private transient JTextField tfAltitude;
-    private transient JLabel jLabel4;
-    private transient JTextField tfAccuracy;
     
     public GPS(){
         super(Constants.GPS);
@@ -51,10 +49,8 @@ public class GPS extends PhysicalContext implements TelnetConnectable{
         tfLongitude = new JTextField();
         jLabel3 = new JLabel("Altitude:");
         tfAltitude = new JTextField();
-        jLabel4 = new JLabel("Accuracy (meters):");
-        tfAccuracy = new JTextField();
         
-        panel.setLayout(new GridLayout(4, 2, 0, 8));
+        panel.setLayout(new GridLayout(3, 2, 0, 8));
 
         panel.add(jLabel1);
         panel.add(tfLatitude);
@@ -64,10 +60,7 @@ public class GPS extends PhysicalContext implements TelnetConnectable{
 
         panel.add(jLabel3);
         panel.add(tfAltitude);
-        
-        panel.add(jLabel4);
-        panel.add(tfAccuracy);
-        
+                
     }
     
     public void savePanel(){
@@ -75,7 +68,6 @@ public class GPS extends PhysicalContext implements TelnetConnectable{
             latitude = Double.valueOf(tfLatitude.getText());
             longitude = Double.valueOf(tfLongitude.getText());
             altitude = Double.valueOf(tfAltitude.getText());
-            accuracy = Double.valueOf(tfAccuracy.getText());
         }catch(NumberFormatException e){
             JOptionPane.showMessageDialog(null, "Please enter a correct value");
         }
@@ -85,13 +77,12 @@ public class GPS extends PhysicalContext implements TelnetConnectable{
 		tfLatitude.setText(String.valueOf(latitude));
 		tfLongitude.setText(String.valueOf(longitude));
 		tfAltitude.setText(String.valueOf(altitude));
-		tfAccuracy.setText(String.valueOf(accuracy));
 		return panel;
 	}
     
     public String getTextAreaRepresentation(){
         StringBuilder sb = new StringBuilder(getName());
-        sb = sb.append(": ").append(latitude).append(", ").append(longitude).append(", ").append(altitude).append(", ").append(accuracy);
+        sb = sb.append(": ").append(latitude).append(", ").append(longitude).append(", ").append(altitude);
         
         return sb.toString();
     }
@@ -99,7 +90,7 @@ public class GPS extends PhysicalContext implements TelnetConnectable{
     @Override
     public String getCommand(){
         return "geo fix " + longitude + " " + latitude + " "
-                    + altitude + "" + accuracy;
+                    + altitude;
     }
     
 }
