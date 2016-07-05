@@ -16,6 +16,7 @@ import javax.swing.table.AbstractTableModel;
 
 import com.logicalcontextsimulator.connection.TransmitData;
 import com.logicalcontextsimulator.gui.panel.TransmissionTabPanel;
+import com.logicalcontextsimulator.gui.panel.contextList.SituationExpectedBehaviorPanel;
 import com.logicalcontextsimulator.gui.panel.contextList.TimeLinePanel;
 import com.logicalcontextsimulator.gui.panel.contextList.TransmissionPanel;
 import com.logicalcontextsimulator.model.context.AbstractContext;
@@ -35,6 +36,8 @@ public class TransmissionController {
     private TransmitData transmitData;
     
     private TransmissionPanel transmissionPanel;
+    
+    private SituationExpectedBehaviorPanel situationExpectedBehaviorPanel;
 
     private TimeLinePanel timeLinePanel;  
     
@@ -62,6 +65,8 @@ public class TransmissionController {
                    Thread.sleep(timeDuration);
                    if(isPlaying){
                        index = scenarioInTimeLine.getCurrentTransmissionIndex();
+                       situationExpectedBehaviorPanel.getTextArea().setText(scenarioInTimeLine.getSituationExpectedSituation(index));
+                       
                        index++;
                        if(index >= getMaxColumn()){
                            index = 0;
@@ -71,6 +76,7 @@ public class TransmissionController {
                        scenarioInTimeLine.setCurrentTransmissionIndex(index);
 
                        aTable.repaint();
+                       situationExpectedBehaviorPanel.repaint();
                    }
                }
            } catch (InterruptedException e) {
@@ -92,6 +98,7 @@ public class TransmissionController {
        scenarioInTimeLine = new Scenario(Constants.EMPTY_STRING); 
         
        transmissionPanel = new TransmissionPanel();
+       situationExpectedBehaviorPanel = new SituationExpectedBehaviorPanel();
        timeLinePanel = new TimeLinePanel(scenarioInTimeLine);
        
        aTable = timeLinePanel.getTable();
@@ -111,7 +118,7 @@ public class TransmissionController {
     
     private void changePlaybackStatus(){
       if(!isPlaying){
-        String durationInMillis = JOptionPane.showInputDialog( "Duartion in Milliseconds: ", timeDuration ); 
+        String durationInMillis = JOptionPane.showInputDialog( "Duration in Milliseconds: ", timeDuration ); 
 
         try{
            if(durationInMillis!=null)
@@ -136,7 +143,11 @@ public class TransmissionController {
         return transmissionPanel;
     }
 
-    public TimeLinePanel getTimeLinePanel() {
+    public SituationExpectedBehaviorPanel getSituationExpectedBehaviorPanel() {
+		return situationExpectedBehaviorPanel;
+	}
+
+	public TimeLinePanel getTimeLinePanel() {
         return timeLinePanel;
     }
 

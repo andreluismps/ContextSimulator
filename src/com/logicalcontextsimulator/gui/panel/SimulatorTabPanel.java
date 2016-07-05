@@ -74,6 +74,10 @@ public class SimulatorTabPanel extends javax.swing.JPanel {
         titleBorder.setTitleJustification(TitledBorder.CENTER);
         jPanel3.setBorder(titleBorder);
         
+        titleBorder = BorderFactory.createTitledBorder(detachedBorder, "Situation Expected Behavior");
+        titleBorder.setTitleJustification(TitledBorder.CENTER);
+        panelSituationExpectedBehavior.setBorder(titleBorder);
+        
        // panelCurrentTransmission.add(currentTransmissionPanel, BorderLayout.CENTER);
         
        // panelDown.add(scenarioPanel, BorderLayout.CENTER);
@@ -112,7 +116,16 @@ public class SimulatorTabPanel extends javax.swing.JPanel {
         return jPanel3;
     }    
 
-    public JButton getBtAddContextSource() {
+    public javax.swing.JPanel getPanelSituationExpectedBehavior() {
+		return panelSituationExpectedBehavior;
+	}
+
+	public void setPanelSituationExpectedBehavior(
+			javax.swing.JPanel panelSituationExpectedBehavior) {
+		this.panelSituationExpectedBehavior = panelSituationExpectedBehavior;
+	}
+
+	public JButton getBtAddContextSource() {
         return btAddContextSource;
     }
 
@@ -222,8 +235,11 @@ public class SimulatorTabPanel extends javax.swing.JPanel {
         panelDown = new javax.swing.JPanel();
         jSeparator2 = new javax.swing.JSeparator();
         jPanel3 = new javax.swing.JPanel();
+        panelConsole = new javax.swing.JPanel();
+        jSeparator3 = new javax.swing.JSeparator();
+        panelSituationExpectedBehavior = new javax.swing.JPanel();
 
-        setLayout(new java.awt.GridLayout(3, 1));
+        setLayout(new java.awt.GridLayout(4, 1));
 
         panelUp.setLayout(new javax.swing.BoxLayout(panelUp, javax.swing.BoxLayout.LINE_AXIS));
 
@@ -431,8 +447,23 @@ public class SimulatorTabPanel extends javax.swing.JPanel {
 
         jPanel3.setLayout(new java.awt.BorderLayout());
         panelDown.add(jPanel3, java.awt.BorderLayout.CENTER);
-
+        
         add(panelDown);
+        
+        panelConsole.setLayout(new java.awt.BorderLayout());
+        
+        jSeparator3.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator3.setForeground(new java.awt.Color(51, 51, 51));
+        jSeparator3.setPreferredSize(new java.awt.Dimension(0, 5));
+        panelConsole.add(jSeparator3, java.awt.BorderLayout.NORTH);
+        
+        panelConsole.add(jSeparator3, java.awt.BorderLayout.NORTH);
+        
+        panelSituationExpectedBehavior.setLayout(new java.awt.BorderLayout());
+        panelConsole.add(panelSituationExpectedBehavior, java.awt.BorderLayout.CENTER);
+        
+        add(panelConsole);
+        
     }// </editor-fold>//GEN-END:initComponents
 
     private void btAddScenarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAddScenarioActionPerformed
@@ -485,6 +516,7 @@ public class SimulatorTabPanel extends javax.swing.JPanel {
     private javax.swing.JPanel jPanelButtonSituationOverview;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
     private javax.swing.JPanel panelContextDetail;
     private javax.swing.JPanel panelDown;
     private javax.swing.JPanel panelLogical;
@@ -494,5 +526,7 @@ public class SimulatorTabPanel extends javax.swing.JPanel {
     private javax.swing.JPanel panelScenario;
     private javax.swing.JPanel panelSituation;
     private javax.swing.JPanel panelUp;
+    private javax.swing.JPanel panelConsole;
+    private javax.swing.JPanel panelSituationExpectedBehavior;
     // End of variables declaration//GEN-END:variables
 }

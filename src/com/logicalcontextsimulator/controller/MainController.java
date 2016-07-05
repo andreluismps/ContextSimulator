@@ -353,6 +353,7 @@ public class MainController {
         simulatorTabPanel.getPanelLogical().add(logicalController.getLogicalContextListPanel(), BorderLayout.CENTER);
         simulatorTabPanel.getPanelPhysical().add(physicalController.getContextSourceListPanel(), BorderLayout.CENTER);
         simulatorTabPanel.getPanelDown().add(transmissionController.getTransmissionPanel(), BorderLayout.CENTER);
+        simulatorTabPanel.getPanelSituationExpectedBehavior().add(transmissionController.getSituationExpectedBehaviorPanel(), BorderLayout.CENTER);
     }
 
     

@@ -94,7 +94,22 @@ public class Scenario extends AbstractContext{
         this.currentTransmissionIndex = currentTransmissionIndex;
     }
     
-    
+    public String getSituationExpectedSituation(int index){
+    	
+    	if (this.getContextList() == null || this.getContextList().isEmpty()) return "";
+    	
+    	AbstractContext timeSlot = this.getContextList().get(index);
+    	
+    	if (timeSlot == null) return "";
+    	
+    	for (AbstractContext abstractContext : timeSlot.getContextList()) {
+			if (abstractContext instanceof Situation)
+				return "Expected behavior to situation '" + abstractContext.getName() + "':\n" 
+					 + ((Situation)abstractContext).getExpectedBehavior();
+		}
+    	
+    	return "";
+    }
 
 
 }

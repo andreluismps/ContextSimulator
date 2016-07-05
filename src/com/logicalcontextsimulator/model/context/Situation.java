@@ -21,7 +21,7 @@ public class Situation extends AbstractContext{
 	 */
 	private static final long serialVersionUID = 6275195839246421095L;
 	
-	private List<String> expectedActions = new ArrayList<String>();
+	private String expectedBehavior;
 
 	public Situation(String name){
 		super();
@@ -46,13 +46,12 @@ public class Situation extends AbstractContext{
           getContextList().add(context);  
         }
     }
-    
-	public void setExpectedActions(List<String> expectedActions) {
-		this.expectedActions = expectedActions;
+
+	public String getExpectedBehavior() {
+		return expectedBehavior;
 	}
 
-	public List<String> getExpectedActions() {
-		return expectedActions;
+	public void setExpectedBehavior(String expectedBehavior) {
+		this.expectedBehavior = expectedBehavior;
 	}
-
 }
