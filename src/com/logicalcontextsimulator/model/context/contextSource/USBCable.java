@@ -25,7 +25,7 @@ public class USBCable extends PhysicalContext{
 	private static final long serialVersionUID = 6364060773441832300L;
 
 	//Model
-    boolean value1 = false;
+    boolean value1;
     
     //GUI
     private transient JPanel panel;
@@ -54,6 +54,7 @@ public class USBCable extends PhysicalContext{
     }
     
     public JPanel getPanel(){
+       cbValue1.setSelected(value1);
        return panel;
     }
     

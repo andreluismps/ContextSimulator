@@ -5,8 +5,6 @@
 package com.logicalcontextsimulator.model.context;
 
 import java.awt.Color;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.logicalcontextsimulator.util.Constants;
 

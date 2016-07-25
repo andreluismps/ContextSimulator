@@ -37,9 +37,6 @@ public class HardDisk extends PhysicalContext{
     public HardDisk(){
         super(Constants.DISK);
         
-        //Model
-        value1 = 50;
-        
         //GUI
         panel = new JPanel();
         jLabel1 = new JLabel("Hard Disk Memory in MB:");
@@ -62,6 +59,7 @@ public class HardDisk extends PhysicalContext{
     }
     
     public JPanel getPanel(){
+       tfValue1.setText(String.valueOf(value1));
        return panel;
     }
     

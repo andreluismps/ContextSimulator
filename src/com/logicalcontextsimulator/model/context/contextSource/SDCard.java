@@ -25,7 +25,7 @@ public class SDCard extends PhysicalContext{
 	private static final long serialVersionUID = -4250270265749791102L;
 
 	//Model
-    boolean value1 = false;
+    boolean value1;
     
     //GUI
     private transient JPanel panel;
@@ -54,6 +54,7 @@ public class SDCard extends PhysicalContext{
     }
     
     public JPanel getPanel(){
+       cbValue1.setSelected(value1);
        return panel;
     }
     

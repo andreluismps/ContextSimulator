@@ -37,10 +37,7 @@ public class Battery extends PhysicalContext implements TelnetConnectable{
     //TODO Rechtsbuendig
     public Battery(){
         super(Constants.BATTERY);
-        
-        //Model
-        value1 = 50;
-        
+      
         //GUI
         panel = new JPanel();
         jLabel1 = new JLabel("Battery Level in %:");
@@ -68,6 +65,7 @@ public class Battery extends PhysicalContext implements TelnetConnectable{
     }
     
     public JPanel getPanel(){
+       tfValue1.setText(String.valueOf(value1));
        return panel;
     }
     
