@@ -15,6 +15,7 @@ import java.io.PrintStream;
 import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * TelnetServer creates telnet connection with emulator's or Android's command
@@ -27,6 +28,8 @@ public class TelnetServer {
 
     // public TelnetSimulatorModel mSimulator;
     public PrintStream out;
+    public BufferedReader in = null;
+
     private Socket serverSocket;
 //    private FileRunnable runnable;
     private ArrayList<String> dateAndTime;
@@ -55,6 +58,15 @@ public class TelnetServer {
         }
         try {
             out = new PrintStream(serverSocket.getOutputStream());
+            //To debug telnet results
+            //in = new BufferedReader(new InputStreamReader(serverSocket.getInputStream()));
+            
+            Scanner scanner = new Scanner(new File(System.getProperty("user.home") + "/.emulator_console_auth_token"));
+            String authToken = scanner.next();
+            scanner.close();
+            System.out.println(authToken);
+
+            sendTelnetCommand("auth "+ authToken);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -152,7 +164,17 @@ public class TelnetServer {
     public void sendTelnetCommand(String command) {
         if (out != null) {
             out.println(command);
+            //Debug results
+            //receiveTelnetResponse();
         }
+    }
+    
+    public void receiveTelnetResponse() {
+        try {
+        	System.out.println(in.readLine());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
     }
 
     /**
