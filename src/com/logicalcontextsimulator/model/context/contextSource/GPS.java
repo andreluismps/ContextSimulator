@@ -87,6 +87,8 @@ public class GPS extends PhysicalContext implements TelnetConnectable {
 	}
 
 	public String getTextAreaRepresentation() {
+		if (panel == null)
+			initPanel();
 		StringBuilder sb = new StringBuilder(getName());
 		sb = sb.append(": ").append(latitude).append(", ").append(longitude).append(", ").append(altitude);
 

@@ -73,6 +73,8 @@ public class TimeDate extends PhysicalContext {
 	}
 
 	public String getTextAreaRepresentation() {
+		if (panel == null)
+			initPanel();
 		StringBuilder sb = new StringBuilder(getName());
 		sb = sb.append(": ").append(time).append(", ").append(date);
 

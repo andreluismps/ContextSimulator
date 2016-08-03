@@ -68,7 +68,6 @@ public class ListPanelLogicalContext extends javax.swing.JPanel {
         spLogicalContextList.setViewportView(jLogicalContextList);
 
         add(spLogicalContextList, java.awt.BorderLayout.CENTER);
-        System.out.println("initComponents");
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JList jLogicalContextList;

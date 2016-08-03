@@ -83,6 +83,8 @@ public class Magnetometer extends PhysicalContext {
 	}
 
 	public String getTextAreaRepresentation() {
+		if (panel == null)
+			initPanel();
 		StringBuilder sb = new StringBuilder(getName());
 		sb = sb.append(": ").append(value1).append(", ").append(value2).append(", ").append(value3);
 

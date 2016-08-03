@@ -76,6 +76,8 @@ public class Battery extends PhysicalContext implements TelnetConnectable {
 	}
 
 	public String getTextAreaRepresentation() {
+		if (panel == null)
+			initPanel();
 		StringBuilder sb = new StringBuilder(jLabel1.getText()).append(" ").append(value1);
 
 		return sb.toString();

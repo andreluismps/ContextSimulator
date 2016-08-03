@@ -97,6 +97,8 @@ public class Calendar extends PhysicalContext {
 	}
 
 	public String getTextAreaRepresentation() {
+		if (panel == null)
+			initPanel();
 		StringBuilder sb = new StringBuilder(getName());
 		sb = sb.append(": ").append(appointmentName).append(", Date: ").append(date).append(", Start: ").append(startTime).append(", End: ").append(endTime);
 

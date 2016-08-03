@@ -107,6 +107,8 @@ full
 
 	@Override
 	public String getTextAreaRepresentation() {
+		if (panel == null)
+			initPanel();
 		StringBuilder sb = new StringBuilder("Network Connection: ").append(getNetworkSpeed());
 
 		return sb.toString();

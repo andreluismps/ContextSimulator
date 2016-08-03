@@ -70,6 +70,8 @@ public class RAM extends PhysicalContext {
 	}
 
 	public String getTextAreaRepresentation() {
+		if (panel == null)
+			initPanel();
 		StringBuilder sb = new StringBuilder(jLabel1.getText()).append(" ").append(value1);
 
 		return sb.toString();
