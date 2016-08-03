@@ -56,7 +56,7 @@ public class ListPanelLogicalContext extends javax.swing.JPanel {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-
+    	
         spLogicalContextList = new javax.swing.JScrollPane();
         jLogicalContextList = new javax.swing.JList();
 
@@ -68,6 +68,7 @@ public class ListPanelLogicalContext extends javax.swing.JPanel {
         spLogicalContextList.setViewportView(jLogicalContextList);
 
         add(spLogicalContextList, java.awt.BorderLayout.CENTER);
+        System.out.println("initComponents");
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JList jLogicalContextList;

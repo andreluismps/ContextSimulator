@@ -15,60 +15,66 @@ import com.logicalcontextsimulator.model.context.PhysicalContext;
 import com.logicalcontextsimulator.util.Constants;
 
 /**
- *
+ * 
  * @author MHL
  */
-public class Thermometer extends PhysicalContext{
-    
-    /**
+public class Thermometer extends PhysicalContext {
+
+	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -3812780275455481058L;
 
-	//Model
-    private int value1;
-    
-    //GUI
-    private transient JPanel panel;
-    private transient JLabel jLabel1;
-    private transient JTextField tfValue1;
-    
-    //TODO Rechtsbuendig
-    public Thermometer(){
-        super(Constants.THERMOMETER);
-        
-        //Model
-        value1 = 20;
-        
-        //GUI
-        panel = new JPanel();
-        jLabel1 = new JLabel("Temperature in °Celcius:");
-        tfValue1 = new JTextField(String.valueOf(value1));
-        
-        panel.setLayout(new GridLayout(3, 2, 0, 15));
+	// Model
+	private int value1;
 
-        panel.add(new JLabel());
-        panel.add(new JLabel());     
-        panel.add(jLabel1);
-        panel.add(tfValue1);
-    }
-    
-    public void savePanel(){
-        try{
-            value1 = Integer.parseInt(tfValue1.getText());
-        }catch(NumberFormatException e){
-            JOptionPane.showMessageDialog(null, "Please enter a correct value");
-        }
-    }
-    
-    public JPanel getPanel(){
-       return panel;
-    }
+	// GUI
+	private transient JPanel panel;
+	private transient JLabel jLabel1;
+	private transient JTextField tfValue1;
 
-    public String getTextAreaRepresentation(){
-        StringBuilder sb = new StringBuilder(jLabel1.getText()).append(" ").append(value1);
+	// TODO Rechtsbuendig
+	public Thermometer() {
+		super(Constants.THERMOMETER);
 
-        return sb.toString();
-    }
-    
+		// Model
+		value1 = 20;
+
+		// GUI
+		initPanel();
+	}
+
+	private void initPanel() {
+		panel = new JPanel();
+		jLabel1 = new JLabel("Temperature in °Celcius:");
+		tfValue1 = new JTextField(String.valueOf(value1));
+
+		panel.setLayout(new GridLayout(3, 2, 0, 15));
+
+		panel.add(new JLabel());
+		panel.add(new JLabel());
+		panel.add(jLabel1);
+		panel.add(tfValue1);
+	}
+
+	public void savePanel() {
+		try {
+			value1 = Integer.parseInt(tfValue1.getText());
+		} catch (NumberFormatException e) {
+			JOptionPane.showMessageDialog(null, "Please enter a correct value");
+		}
+	}
+
+	public JPanel getPanel() {
+		if (panel == null)
+			initPanel();
+		return panel;
+	}
+
+	public String getTextAreaRepresentation() {
+		StringBuilder sb = new StringBuilder(jLabel1.getText()).append(" ").append(value1);
+
+		return sb.toString();
+	}
+
 }
