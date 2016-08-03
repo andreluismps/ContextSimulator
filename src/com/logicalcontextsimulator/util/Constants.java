@@ -29,14 +29,11 @@ public class Constants {
     
     public ImageIcon getImageIcon(String icon_path){
        url = Situation.class.getClassLoader().getResource(icon_path);
-     //  new ImageIcon(getClass().getResource("icons/x_neu.jpg"));
-       System.out.println("icon_path: "+ icon_path);
-       System.out.println(url.toString());
+
        ImageIcon imageIcon = new ImageIcon(url);
-       System.out.println(url.toString());
+       
        return imageIcon;
        
-       //return new ImageIcon("C://Users//MHL//Desktop//"+icon_path);
     }
     
     
@@ -148,15 +145,6 @@ public class Constants {
     
     public final static String URL_ICON_LIST_CELLID = "icons/listIcons/cellid.png";  
   
-    
-    public final static String URL_FILE_LOGICAL_CONTEXT = "C:/Users/MHL/Desktop/currentStatusLogical.ctx";
-    
-    public final static String URL_FILE_SITUATION = "C:/Users/MHL/Desktop/currentStatusSituation.ctx";
-    
-    public final static String URL_FILE_SCENARIO = "C:/Users/MHL/Desktop/currentStatusScenario.ctx";
-    
-    public final static String URL_FILE_CONTEXT_SIMULATOR = "C:/temp/contextSimulator.ctx";
-    
     //*** Differntiate between Physical, Logical and Situations ***
     public final static String PHYSICAL = "Physical Context";
     
