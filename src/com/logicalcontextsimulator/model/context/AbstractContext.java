@@ -15,6 +15,31 @@ import javax.swing.ImageIcon;
 
 import org.reflections.Reflections;
 
+import com.logicalcontextsimulator.model.context.contextSource.Accelerometer;
+import com.logicalcontextsimulator.model.context.contextSource.Barometer;
+import com.logicalcontextsimulator.model.context.contextSource.Battery;
+import com.logicalcontextsimulator.model.context.contextSource.Bluetooth;
+import com.logicalcontextsimulator.model.context.contextSource.CPU;
+import com.logicalcontextsimulator.model.context.contextSource.Calendar;
+import com.logicalcontextsimulator.model.context.contextSource.Camera;
+import com.logicalcontextsimulator.model.context.contextSource.CellID;
+import com.logicalcontextsimulator.model.context.contextSource.GPS;
+import com.logicalcontextsimulator.model.context.contextSource.Gyroscope;
+import com.logicalcontextsimulator.model.context.contextSource.HTTPResponse;
+import com.logicalcontextsimulator.model.context.contextSource.HardDisk;
+import com.logicalcontextsimulator.model.context.contextSource.Infrared;
+import com.logicalcontextsimulator.model.context.contextSource.LightSensor;
+import com.logicalcontextsimulator.model.context.contextSource.Magnetometer;
+import com.logicalcontextsimulator.model.context.contextSource.Microphone;
+import com.logicalcontextsimulator.model.context.contextSource.NetworkConnection;
+import com.logicalcontextsimulator.model.context.contextSource.QRCode;
+import com.logicalcontextsimulator.model.context.contextSource.RAM;
+import com.logicalcontextsimulator.model.context.contextSource.RFID;
+import com.logicalcontextsimulator.model.context.contextSource.SDCard;
+import com.logicalcontextsimulator.model.context.contextSource.Thermometer;
+import com.logicalcontextsimulator.model.context.contextSource.TimeDate;
+import com.logicalcontextsimulator.model.context.contextSource.USBCable;
+import com.logicalcontextsimulator.model.context.contextSource.WiFi;
 import com.logicalcontextsimulator.util.GsonUtils;
 import com.logicalcontextsimulator.util.HashCodeUtil;
 import com.logicalcontextsimulator.util.RuntimeTypeAdapterFactory;
@@ -44,11 +69,41 @@ public abstract class AbstractContext implements Serializable, Cloneable, Compar
 		Reflections reflections = new Reflections("com.logicalcontextsimulator.model.context");
 		
 		Set<Class<? extends AbstractContext>> allClasses = reflections.getSubTypesOf(AbstractContext.class);
-		reflections = new Reflections("com.logicalcontextsimulator.model.context");
+		System.out.println("context size = " + allClasses.size());
+		reflections = new Reflections("com.logicalcontextsimulator.model.context.contextSource");
 		allClasses.addAll(reflections.getSubTypesOf(AbstractContext.class));
+		System.out.println("contextSource after size = " + allClasses.size());
 		for (Class<? extends AbstractContext> clazz : allClasses) {
+			System.out.println(clazz.getName());
 			adapter.registerSubtype(clazz);
 		}
+		//TODO fix the reflection on mac os terminal
+				new TimeSlot(0);
+				new Accelerometer();
+				new Barometer();
+				new Battery();
+				new Bluetooth();
+				new Calendar();
+				new Camera();
+				new CellID();
+				new CPU();
+				new GPS();
+				new Gyroscope();
+				new HardDisk();
+				new HTTPResponse();
+				new Infrared();
+				new LightSensor();
+				new Magnetometer();
+				new Microphone();
+				new NetworkConnection();
+				new QRCode();
+				new RAM();
+				new RFID();
+				new SDCard();
+				new Thermometer();
+				new TimeDate();
+				new USBCable();
+				new WiFi();
 	}
 
 	private synchronized void registerClass() {
