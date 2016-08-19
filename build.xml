@@ -1,9 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project default="create_run_jar" name="Build Runnable Jar">
+<project default="jar" name="Build Runnable Jar">
     <!--this file was created by Eclipse Runnable JAR Export Wizard-->
     <!--ANT 1.7 is required                                        -->
-    <target name="create_run_jar">
-        <jar destfile="./dist/ContextSimulator.jar">
+    <property name="src.dir"     value="src"/>
+    <property name="lib.dir"     value="lib"/>
+    <property name="build.dir"   value="build"/>
+    <property name="classes.dir" value="${build.dir}/classes"/>
+    <property name="jar.dir"     value="dist"/>
+	
+    <path id="classpath">
+        <fileset dir="${lib.dir}" includes="**/*.jar"/>
+    </path>
+	
+   <target name="clean">
+        <delete dir="${build.dir}"/>
+    </target>
+
+    <target name="compile">
+        <mkdir dir="${classes.dir}"/>
+        <javac srcdir="${src.dir}" destdir="${classes.dir}" classpathref="classpath"/>
+        <copy todir="${classes.dir}">
+            <fileset dir="${src.dir}" excludes="**/*.java"/>
+        </copy>
+    </target>
+	
+    <target name="jar" depends="compile">
+        <mkdir dir="${jar.dir}"/>
+        <jar destfile=".${jar.dir}/ContextSimulator.jar">
             <manifest>
                 <attribute name="Main-Class" value="org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader"/>
                 <attribute name="Rsrc-Main-Class" value="com.logicalcontextsimulator.controller.MainController"/>
@@ -11,7 +34,7 @@
                 <attribute name="Rsrc-Class-Path" value="./ guava-18.0.jar javassist-3.18.2-GA.jar reflections-0.9.10.jar gson-2.3.1.jar"/>
             </manifest>
             <zipfileset src="jar-in-jar-loader.zip"/>
-            <fileset dir="./bin"/>
+            <fileset dir="./bin"/>			
             <zipfileset dir=".\lib" includes="guava-18.0.jar"/>
             <zipfileset dir=".\lib" includes="javassist-3.18.2-GA.jar"/>
             <zipfileset dir=".\lib" includes="reflections-0.9.10.jar"/>

@@ -57,7 +57,7 @@ public class TelnetServer {
 		try {
 			out = new PrintStream(serverSocket.getOutputStream());
 			// To debug telnet results
-			// in = new BufferedReader(new InputStreamReader(serverSocket.getInputStream()));
+			in = new BufferedReader(new InputStreamReader(serverSocket.getInputStream()));
 
 			Scanner scanner = new Scanner(new File(System.getProperty("user.home") + "/.emulator_console_auth_token"));
 			String authToken = scanner.next();
@@ -164,7 +164,7 @@ public class TelnetServer {
 		if (out != null) {
 			out.println(command);
 			// Debug results
-			// receiveTelnetResponse();
+			receiveTelnetResponse();
 		}
 	}
 
