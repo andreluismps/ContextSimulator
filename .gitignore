@@ -2,3 +2,4 @@
 bin/
 /JavaApplication2/nbproject/private/
 jar-in-jar-loader.zip
+.DS_Store
