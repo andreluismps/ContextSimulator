@@ -47,14 +47,14 @@ public class TransmissionController {
     
     private AbstractContext dragDropObject;
     
-    private int rowSource, columnSource, columnTarget;
+    private int rowSource, columnSource;
     
     private Thread timeLineThread;
     
     private int timeDuration = 1000;
     
     //----------------------
-    private int itsRow, itsColumn, index;
+    private int itsColumn, index;
     private JTable aTable;
 
     //Thread for playback timeline
@@ -85,7 +85,7 @@ public class TransmissionController {
        }
     };
 
-    public TransmissionController(TransmissionTabPanel transmissionTabPanel){
+    public TransmissionController(final TransmissionTabPanel transmissionTabPanel){
         
        timeLineThread = new Thread(run);
        
@@ -113,6 +113,17 @@ public class TransmissionController {
             }
         });
        
+       transmissionPanel.getBtClear().addActionListener(new java.awt.event.ActionListener() {
+           public void actionPerformed(java.awt.event.ActionEvent evt) {
+        	   scenarioInTimeLine = new Scenario(Constants.EMPTY_STRING); 
+               situationExpectedBehaviorPanel = new SituationExpectedBehaviorPanel();
+               timeLinePanel.reset(scenarioInTimeLine);
+               
+               ((AbstractTableModel)(aTable.getModel())).fireTableStructureChanged();     
+               ((AbstractTableModel)(aTable.getModel())).fireTableDataChanged();
+           }
+       });
+       
        timeLineThread.start();
     }
     
@@ -130,6 +141,7 @@ public class TransmissionController {
       }else{
         transmissionPanel.getBtPlay().setIcon(Constants.getInstance().getImageIcon(Constants.URL_ICON_PLAY));
       }
+      transmissionPanel.getBtClear().setEnabled(isPlaying);
       
       isPlaying = !isPlaying; 
     }
@@ -182,7 +194,6 @@ public class TransmissionController {
         @Override
         public void mouseClicked(MouseEvent e) {
             aTable = (JTable)e.getSource();
-            itsRow = aTable.rowAtPoint(e.getPoint());
             itsColumn = aTable.columnAtPoint(e.getPoint());
             
             scenarioInTimeLine.setCurrentTransmissionIndex(itsColumn);

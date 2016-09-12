@@ -48,6 +48,10 @@ public class TimeLinePanel extends javax.swing.JPanel {
         jTable1.setDefaultRenderer(Object.class, new AttributiveCellRenderer());
     }
     
+    public void reset(Scenario scenario){
+    	this.scenario = scenario;
+    }
+    
     public JTable getTable(){
         return jTable1;
     }
