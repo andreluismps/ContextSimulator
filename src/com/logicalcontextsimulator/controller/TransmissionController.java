@@ -62,10 +62,10 @@ public class TransmissionController {
        public void run() {
            try {
                while(true) {
-                   Thread.sleep(timeDuration);
+            	   Thread.sleep(timeDuration);
                    if(isPlaying){
                        index = scenarioInTimeLine.getCurrentTransmissionIndex();
-                       situationExpectedBehaviorPanel.getTextArea().setText(scenarioInTimeLine.getSituationExpectedSituation(index));
+                       
                        
                        index++;
                        if(index >= getMaxColumn()){
@@ -74,6 +74,7 @@ public class TransmissionController {
                        itsColumn = index;
                        setCurrentTransmissionTabPanel();
                        scenarioInTimeLine.setCurrentTransmissionIndex(index);
+                       situationExpectedBehaviorPanel.getTextArea().setText(scenarioInTimeLine.getSituationExpectedSituation(index));
 
                        aTable.repaint();
                        situationExpectedBehaviorPanel.repaint();
@@ -116,7 +117,7 @@ public class TransmissionController {
        transmissionPanel.getBtClear().addActionListener(new java.awt.event.ActionListener() {
            public void actionPerformed(java.awt.event.ActionEvent evt) {
         	   scenarioInTimeLine = new Scenario(Constants.EMPTY_STRING); 
-               situationExpectedBehaviorPanel = new SituationExpectedBehaviorPanel();
+        	   situationExpectedBehaviorPanel.getTextArea().setText("Expected behavior text for situation data transmitted to the mobile device\n\n");
                timeLinePanel.reset(scenarioInTimeLine);
                
                ((AbstractTableModel)(aTable.getModel())).fireTableStructureChanged();     
@@ -224,7 +225,9 @@ public class TransmissionController {
             try{
                 scenarioInTimeLine.getContextList().get(columnTarget).getContextList().add(dragDropObject);
                 scenarioInTimeLine.getContextList().get(columnSource).getContextList().remove(dragDropObject);
+                situationExpectedBehaviorPanel.getTextArea().setText(scenarioInTimeLine.getSituationExpectedSituation(columnTarget));
                 aTable.repaint();
+                situationExpectedBehaviorPanel.repaint();
                 ((AbstractTableModel)(aTable.getModel())).fireTableStructureChanged();     
                 ((AbstractTableModel)(aTable.getModel())).fireTableDataChanged();
              }catch(IndexOutOfBoundsException ex){}
