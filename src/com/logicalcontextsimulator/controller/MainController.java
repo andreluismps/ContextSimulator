@@ -281,7 +281,11 @@ public class MainController {
                 serializeHelperClass.setLstScenario(lstScenario);
                 serializeHelperClass.setLstSituation(lstSituation);
                 
-                JFileChooser chooser = new JFileChooser();
+                String dir = System.getenv("SAVE_DIR");
+                System.out.println("DIST_HOME="+dir);
+            	
+                JFileChooser chooser = new JFileChooser(dir);
+
                 chooser.setSelectedFile(new File("ContextSimulator.ctx"));
                 int answer = chooser.showSaveDialog(mainFrame);
                 
@@ -293,7 +297,9 @@ public class MainController {
         
         mainFrame.getMenuItemLoad().addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {              
-                JFileChooser chooser = new JFileChooser();
+            	String dir = System.getenv("SAVE_DIR");
+            	
+                JFileChooser chooser = new JFileChooser(dir);
                 chooser.setSelectedFile(new File("ContextSimulator.ctx"));
                 int answer = chooser.showOpenDialog(mainFrame);
                 
@@ -322,7 +328,9 @@ public class MainController {
         
         mainFrame.getMenuItemImport().addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {              
-                JFileChooser chooser = new JFileChooser();
+            	String dir = System.getenv("IMPORT_DIR");
+            	
+                JFileChooser chooser = new JFileChooser(dir);
                 chooser.setSelectedFile(new File("ContextSimulator.xml"));
                 int answer = chooser.showOpenDialog(mainFrame);
                 
